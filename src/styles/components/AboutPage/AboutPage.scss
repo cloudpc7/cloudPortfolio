@@ -1,0 +1,27 @@
+@import "../../main/main.scss";
+@import "../../variables/colors/colors";
+@import "../../variables/font/fontthemes";
+
+@media (min-width:768px) {
+    .sunset {
+        max-height: 240px;
+        width: 100%;
+    }
+}
+
+.contact {
+    background-color: #00BFFF;
+    color: #333333;
+    transition: background-color 0.3s, transform 0.2s;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: #0099CC;
+        transform: scale(1.05);
+    }
+}
+
+.sub-title {
+    font-size: 1.5rem;
+}

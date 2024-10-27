@@ -1,0 +1,14 @@
+@import "../../main/main.scss";
+@import "../../variables/colors/colors";
+@import "../../variables/font/fontthemes";
+
+.list-group {
+
+    
+
+    .list-group-item {
+        background-color: $black-primary;
+        font-size: $fontBase;
+    }
+
+}

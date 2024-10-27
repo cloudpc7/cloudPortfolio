@@ -1,0 +1,52 @@
+{
+    "projects": [
+        {
+            "id" : 0,
+            "name": "Nucampsite",
+            "url": "https://myproject.com",
+            "description":"My Nucamp School Nucampsite React Application."
+        },
+        {
+            "id" : 1,
+            "name": "Todo Application",
+            "url": "https://myproject.com",
+            "description":"A simple To Do Application that represents a crud application."
+        },
+        {
+            "id" : 2,
+            "name": "Lifes Lemonade Stand",
+            "url": "https://myproject.com",
+            "description":"Lifes Lemonade Stand Business."
+        },
+        {
+            "id" : 3,
+            "name": "Prime Design Pavers",
+            "url": "https://myproject.com",
+            "description":"Prime Design Pavers Web Application"
+        },
+        {
+            "id" : 4,
+            "name": "Precision Excavating 1 INC.",
+            "url": "https://myproject.com",
+            "description":"Precision Excavating Business."
+        },
+        {
+            "id" : 5,
+            "name": "Sonora Tires",
+            "url": "https://myproject.com",
+            "description":"A Tire Business."
+        },
+        {
+            "id" : 6,
+            "name": "Lozano Plumbing Co.",
+            "url": "https://myproject.com",
+            "description":"A Plumbing Business."
+        },
+        {
+            "id" : 7,
+            "name": "GameKraze",
+            "url": "https://myproject.com",
+            "description":"A Game application that provides mini games."
+        }
+    ]
+}

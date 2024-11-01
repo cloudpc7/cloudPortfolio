@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Container, Navbar,Nav, Button, Offcanvas, NavDropdown, Form} from 'react-bootstrap';
+import { Container, Navbar,Nav, Offcanvas} from 'react-bootstrap';
 import '../styles/components/Header/Header.scss';
 const Header = () => {
 
@@ -20,20 +19,17 @@ const Header = () => {
                     <Offcanvas.Body className="align-items-center">
                         <Nav className="ml-auto">
                             <Nav.Link href="/" className="link">
-                                <i className="fa fa-home fa-2x" />
+                                home
                             </Nav.Link>
                             <Nav.Link href="about" className="link">
-                                <i className="fa fa-info fa-2x" />
+                                about
                             </Nav.Link>
                             <Nav.Link href="contact" className="link">
-                                <i className="fa fa-address-card fa-2x" />
+                                contact
                             </Nav.Link>
-                            <Nav.Link href="projects" className="projects-tab">
-                                Projects
+                            <Nav.Link href="projects">
+                                projects
                             </Nav.Link>
-                        </Nav>
-                        <Navbar.Brand className="m-0">cloud</Navbar.Brand>
-                        <Nav className="d-flex justify-content-end">
                             <Nav.Link href="https://facebook.com" className="link">
                                 <i className="fa fa-facebook fa-2x" />
                             </Nav.Link>
@@ -43,7 +39,8 @@ const Header = () => {
                             <Nav.Link href="https://github.com" className="link">
                                 <i className="fa fa-github fa-2x" />
                             </Nav.Link>
-                        </Nav>   
+                            <Navbar.Brand className="ms-auto">cloud</Navbar.Brand>
+                        </Nav>  
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>
       </Container>

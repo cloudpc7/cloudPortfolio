@@ -26,21 +26,26 @@ $hero-title-sizes: (
 
 // Hero title styles
 .hero-title {
-    font-size: nth($hero-title-sizes, 1); // Default size
+    font-size: 2rem;
+    letter-spacing: 0.25rem;
+}
 
-    @media (min-width: 768px) {
-        font-size: nth($hero-title-sizes, 2);
+.hero-caption {
+    letter-spacing: 0.02em;
+    font-family: $fontCaption;
+}
+
+@media (min-width:992px) {
+    .hero-caption {
+        font-size: 1.25rem;
+        letter-spacing: 0.0625rem;
+        line-height: 155.556%;
+        color: #D3D3D3;
     }
+}
 
-    @media (min-width: 992px) {
-        font-size: nth($hero-title-sizes, 3);
-    }
-
-    @media (min-width: 1200px) {
-        font-size: nth($hero-title-sizes, 4);
-    }
-
-    @media (min-width: 1400px) {
-        font-size: nth($hero-title-sizes, 5);
+@media (min-width:992px) {
+    .hero-title {
+        font-size: 3rem;
     }
 }

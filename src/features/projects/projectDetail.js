@@ -1,18 +1,15 @@
-import { Card, Col} from 'react-bootstrap/Card';
+import { Col, Image } from 'react-bootstrap';
 
-const ProjectDetail = ({project}) => {
-    const {name, url, description } = project;
+const ProjectDetail = ({ project}) => {
+    const { id, name, image } = project;
+    console.log(project.url);
     return (
-        <Col>
-            <Card>
-                <iframe 
-                    src=""
-                    title="project"
-                />
+        
+        <Col xs={8} md={8} className="mb-3">
+        <Image src={image} alt={name} className="w-100"/> 
+        </Col>  
+    );
+};
 
-            </Card>
-        </Col>
-    )
-}
 
 export default ProjectDetail;

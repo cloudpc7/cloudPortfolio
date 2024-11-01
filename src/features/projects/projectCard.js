@@ -1,22 +1,23 @@
+import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import {Card} from 'react-bootstrap';
-const ProjectCard = ({project}) => {
-    const { id, name, url, description } = project;
+import "../../styles/components/comments/comments.scss";
+const ProjectCard = ({ project }) => {
+    const {id, name,url, description} = project;
+
     return (
-        <>
-            <Link to={`${id}`}>
-                <Card>
-                    <iframe 
-                        src={url}
-                        title={name}
-                    />
-                    <Card.Title>{name}</Card.Title>
-                    <Card.Body>
+        <Link to={`${id}`} className="link link-underline link-underline-opacity-0" >
+            <Card className="mb-5 border-0 ">
+                <Card.Img variant="top" src={url} alt={name} className="p-2"/>
+                <Card.Title className="text-center py-2">
+                    {name}
+                </Card.Title>
+                <Card.Body>
+                    <Card.Text className="text-center lh-sm">
                         {description}
-                    </Card.Body>
-                </Card>
-            </Link>
-        </>
+                    </Card.Text>
+                </Card.Body>
+            </Card>
+        </Link>
     )
 }
 

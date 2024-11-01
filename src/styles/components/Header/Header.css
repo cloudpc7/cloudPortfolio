@@ -67,22 +67,22 @@ body {
 .h1 {
   font-family: "Alfa Slab One", serif;
   font-weight: 700;
-  font-size: 5rem;
-  letter-spacing: -2.5px;
-  color: #4682B4;
-  text-transform: uppercase;
+  color: #ffffff;
 }
 
 .h2 {
-  font-size: 1.25rem;
-  letter-spacing: 0.02em;
-  font-family: "Charm", cursive;
+  font-size: 1.125rem;
   color: #D3D3D3;
 }
 
 @media (min-width: 992px) {
   .h2 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .h2 {
+    font-size: 1.5rem;
   }
 }
 p {
@@ -91,10 +91,28 @@ p {
   color: #fff;
 }
 
+.container-fluid {
+  margin: 0 auto;
+  max-width: 90rem;
+}
+
 .offcanvas-header {
+  background-color: #050505;
+  color: #00BFFF;
   text-transform: uppercase;
 }
 
+.offcanvas-body {
+  background-color: #050505;
+}
+.offcanvas-body .nav-link {
+  text-transform: uppercase;
+  color: #00BFFF;
+}
+.offcanvas-body .nav-link:hover {
+  background-color: #333333;
+  color: #ffffff;
+}
 .offcanvas-body .navbar-brand {
   display: none;
 }
@@ -120,7 +138,7 @@ p {
   }
 }
 .navbar .container .navbar-toggler {
-  border-color: #333333;
+  border: 4px solid #333333;
 }
 .navbar .container .navbar-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,191,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");

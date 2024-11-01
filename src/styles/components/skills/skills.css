@@ -67,15 +67,11 @@ body {
 .h1 {
   font-family: "Alfa Slab One", serif;
   font-weight: 700;
-  letter-spacing: -2.5px;
-  color: #4682B4;
-  text-transform: uppercase;
+  color: #ffffff;
 }
 
 .h2 {
-  font-size: 1.25rem;
-  letter-spacing: 0.02em;
-  font-family: "Charm", cursive;
+  font-size: 1.125rem;
   color: #D3D3D3;
 }
 
@@ -95,7 +91,14 @@ p {
   color: #fff;
 }
 
-.list-group .list-group-item {
+.container-fluid {
+  margin: 0 auto;
+  max-width: 90rem;
+}
+
+.list-group .skill-card {
   background-color: #050505;
-  font-size: clamp(1.25rem, 1.25rem + 0.25vw, 1.75rem);
+}
+.list-group .skill-card .anime-card .card-front {
+  color: #ffffff;
 }/*# sourceMappingURL=skills.css.map */

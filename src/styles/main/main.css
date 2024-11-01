@@ -64,14 +64,11 @@ body {
 .h1 {
   font-family: "Alfa Slab One", serif;
   font-weight: 700;
-  color: #4682B4;
-  text-transform: uppercase;
+  color: #ffffff;
 }
 
 .h2 {
-  font-size: 1.25rem;
-  letter-spacing: 0.02em;
-  font-family: "Charm", cursive;
+  font-size: 1.125rem;
   color: #D3D3D3;
 }
 

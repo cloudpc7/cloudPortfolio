@@ -4,9 +4,14 @@
 
 @media (min-width:768px) {
     .sunset {
-        max-height: 240px;
+        max-height: 200px;
         width: 100%;
     }
+}
+
+.about-title {
+    font-size: 3rem;
+    color: #fff;
 }
 
 .contact {
@@ -15,13 +20,16 @@
     transition: background-color 0.3s, transform 0.2s;
     letter-spacing: 0.02em;
     text-transform: uppercase;
+    text-decoration: none;
 
     &:hover {
         background-color: #0099CC;
         transform: scale(1.05);
+        color: #fff;
     }
 }
 
 .sub-title {
-    font-size: 1.5rem;
+    font-family: $fontCaption;
+    font-size: 2.25rem;
 }

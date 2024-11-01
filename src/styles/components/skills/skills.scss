@@ -2,13 +2,20 @@
 @import "../../variables/colors/colors";
 @import "../../variables/font/fontthemes";
 
-.list-group {
+.hero-caption {
+    font-size: 20px;
+    letter-spacing: 0.0625rem;
+}
 
-    
+.skill-card {
+    background-color: $black-primary;
+}
 
-    .list-group-item {
-        background-color: $black-primary;
-        font-size: $fontBase;
-    }
+.anime-card {
+    min-height: 11em;
+}
 
+.skill-image {
+    width: 100px;
+    height: 100px;
 }

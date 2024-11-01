@@ -6,8 +6,6 @@ import { validateContactForm } from '../utils/validateContactForm';
 const ContactForm = () => {
 
     const handleSubmit = (values, { resetForm }) => {
-        console.log(values);
-        console.log('in JSON format:', JSON.stringify(values));
         resetForm();
     }
 
@@ -94,7 +92,7 @@ const ContactForm = () => {
                         ms-xxl-5
                     "
                 >
-                    <Col sm='4' md="8" xxl='6' className="mb-3">
+                    <Col sm='4' md="8" xxl='8' className="mb-3">
                         <Label check md={{size: 10}}>
                             <Field 
                                 name='agree'

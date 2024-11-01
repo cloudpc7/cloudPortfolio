@@ -34,6 +34,7 @@ const CommentForm = ({projectId}) => {
             </Button>
             <Modal
                 isOpen={modalOpen}
+                className="modal"
             >
                 <ModalHeader
                     toggle={() => setModalOpen(false)}

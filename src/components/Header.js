@@ -1,5 +1,6 @@
 import { Container, Navbar,Nav, Offcanvas} from 'react-bootstrap';
 import '../styles/components/Header/Header.scss';
+import { Link } from 'react-router-dom';
 const Header = () => {
 
     return (
@@ -18,16 +19,16 @@ const Header = () => {
                     </Offcanvas.Header>
                     <Offcanvas.Body className="align-items-center">
                         <Nav className="ml-auto">
-                            <Nav.Link href="/" className="link">
+                            <Nav.Link as={ Link } to="/" className="link">
                                 home
                             </Nav.Link>
-                            <Nav.Link href="about" className="link">
+                            <Nav.Link as={Link} to="/about" className="link">
                                 about
                             </Nav.Link>
-                            <Nav.Link href="contact" className="link">
+                            <Nav.Link as={ Link } to="/contact" className="link">
                                 contact
                             </Nav.Link>
-                            <Nav.Link href="projects">
+                            <Nav.Link as={ Link } to="/projects">
                                 projects
                             </Nav.Link>
                             <Nav.Link href="https://facebook.com" className="link">

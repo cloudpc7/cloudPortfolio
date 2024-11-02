@@ -1,5 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { baseUrl } from '../../app/baseUrl';
+import { db } from '../../../firebase.config';
+import { collection, getDocs } from 'firebase/firestore';
 
 const initialState = {
     commentsArray: [],
@@ -8,13 +10,12 @@ const initialState = {
 }
 
 export const fetchComments = createAsyncThunk('comments/fetchComments', async () => {
-    const response = await fetch(baseUrl + 'comments');
-    if(!response.ok) {
-        return Promise.reject(`Unable to fetch, status: ${response.status}`);
-    }
+    const querySnapshot = await getDocs(collection(db,'comments'));
+        const comments = [];
+        querySnapshot.forEach((doc) => {
+            comments.push(doc.data());
+        })
 
-    const data = await response.json();
-    return data;
 })
 
 export const postComment = createAsyncThunk('comments/postComments', async(comment, { dispatch }) => {

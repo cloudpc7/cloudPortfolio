@@ -4,7 +4,7 @@ import { ListGroup, Image } from "react-bootstrap";
 import "../../styles/components/skills/skills.scss";
 
 const SkillsCard = ({ skill }) => {
-    const { name, url, description } = skill;
+    const { name,image,description } = skill;
     const [flipped, setFlipped] = useState(false);
 
     const { transform } = useSpring({
@@ -48,7 +48,7 @@ const SkillsCard = ({ skill }) => {
                     }}
                 >
                     <p className="py-2">{name}</p>
-                    <Image src={url} loading="lazy" className="py-2 skill-image" />
+                    <Image src={image} loading="lazy" className="py-2 skill-image" />
                 </div>
                 <animated.div
                     className="card-back text-center"

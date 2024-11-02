@@ -1,17 +1,10 @@
 export const mapImageURL = (arr) => {
     return arr.map((item) => {
-        const imagePath = `../app/assets/images/${item.image}`;
-        let image;
-
-        try {
-            image = require(imagePath);
-        } catch (error) {
-            console.error(`Error loading image at ${imagePath}:`, error);
-        }
-
+        console.log(item);
         return {
             ...item,
-            image: image
+            image: require("../app/assets/images/" + item.url) // Make sure you map the correct property
         };
     });
 };
+

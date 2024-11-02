@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { baseUrl } from '../../app/baseUrl';
 import { mapImageURL } from '../../utils/mapImageURL';
-import { db } from '../../../firebase.config';
+import { db } from '../../firebase.config';
 import { collection, getDocs } from 'firebase/firestore';
 
 export const fetchProjects = createAsyncThunk(
@@ -11,7 +10,8 @@ export const fetchProjects = createAsyncThunk(
         const projects = [];
         querySnapshot.forEach((doc) => {
             projects.push(doc.data());
-        })
+        });
+        return projects;
     }
 )
 

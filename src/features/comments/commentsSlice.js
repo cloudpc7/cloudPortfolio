@@ -1,30 +1,40 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-// import { COMMENTS } from '../../app/shared/COMMENTS';
-import { baseUrl } from '../../app/baseUrl';
+import { db } from '../../firebase.config';
+import { collection, getDocs, addDoc} from 'firebase/firestore';
 
 export const fetchComments = createAsyncThunk(
     'comments/fetchComments',
     async () => {
-        const response = await fetch(baseUrl + 'comments');
-        if (!response.ok) {
-            return Promise.reject('Unable to fetch, status: ' + response.status);
-        }
-        const data = await response.json();
-        return data;
+       const querySnapshot = await getDocs(collection(db,'comments'));
+       const comments = [];
+       querySnapshot.forEach((doc) => {
+        comments.push(doc.data());
+       });
+       return comments;
     }
 );
 
 export const postComment = createAsyncThunk(
     'comments/postComment',
-    async (payload, { dispatch, getState }) => {
-        setTimeout(() => {
-            const { comments } = getState();
-            payload.date = new Date().toISOString();
-            payload.id = comments.commentsArray.length + 1;
-            dispatch(addComment(payload));
-        }, 2000);
+    async (payload, { getState }) => {
+        // Add the comment to Firestore
+        const docRef = await addDoc(collection(db, 'comments'), {
+            ...payload,
+            date: new Date().toISOString() // Set the current date
+        });
+
+        // Get the state and add Firestore's ID to the new comment
+        const newComment = {
+            ...payload,
+            id: docRef.id, // Use Firestore-generated ID
+            date: new Date().toISOString() // Ensure the date is consistent
+        };
+
+        // Return the new comment to be added to the state
+        return newComment;
     }
 );
+
 
 const initialState = {
     commentsArray: [],

@@ -96,20 +96,21 @@ p {
   max-width: 90rem;
 }
 
-.hero-caption {
-  font-size: 20px;
-  letter-spacing: 0.0625rem;
-}
-
-.skill-card {
+.card {
   background-color: #050505;
 }
-
-.anime-card {
-  min-height: 11em;
+.card .card-title {
+  color: #D3D3D3;
+}
+.card .card-text {
+  color: #D3D3D3;
+  letter-spacing: 0.028em;
+}
+.card p {
+  color: #D3D3D3;
+  letter-spacing: 0.028em;
 }
 
-.skill-image {
-  width: 100px;
-  height: 100px;
-}/*# sourceMappingURL=skills.css.map */
+.comment-title {
+  color: #ffffff;
+}/*# sourceMappingURL=comments.css.map */

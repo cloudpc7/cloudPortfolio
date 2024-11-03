@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
-import ProjectsPage from './pages/ProjectsPage';
+import ProjectsPage from './pages/ProjectsPage.js';
 import Container from 'react-bootstrap/Container';
 import ProjectDetailPage from './pages/ProjectDetailPage';
 import { fetchProjects } from './features/projects/projectsSlice';

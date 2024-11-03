@@ -113,10 +113,12 @@ p {
   transition: background-color 0.3s, transform 0.2s;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  text-decoration: none;
 }
 .contact:hover {
   background-color: #0099CC;
   transform: scale(1.05);
+  color: #fff;
 }
 
 .sub-title {

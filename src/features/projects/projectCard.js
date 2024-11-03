@@ -2,7 +2,7 @@ import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import "../../styles/components/comments/comments.scss";
 const ProjectCard = ({ project }) => {
-    const {id, name,image, description} = project;
+    const {id, name, url, image, description} = project;
 
     return (
         <Link to={`${id}`} className="link link-underline link-underline-opacity-0" >

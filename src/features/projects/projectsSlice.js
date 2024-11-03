@@ -1,19 +1,18 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { mapImageURL } from '../../utils/mapImageURL';
-import { db } from '../../firebase/firebase.config';
-import { collection, getDocs } from 'firebase/firestore';
+import { baseUrl } from '../../app/baseUrl';
 
-export const fetchProjects = createAsyncThunk(
-    'projects/fetchProjects',
-    async () => {
-        const querySnapshot = await getDocs(collection(db,'projects'));
-        const projects = [];
-        querySnapshot.forEach((doc) => {
-            projects.push(doc.data());
-        });
-        return projects;
+export const fetchProjects = createAsyncThunk('projects/fetchProjects', async () => {
+
+    const response = await fetch(baseUrl + 'projects');
+
+    if(!response.ok) {
+        return Promise.reject(`Unable to fetch, status: ${response.status}`);
     }
-)
+    const data = await response.json();
+    return data;
+
+});
 
 const initialState = {
     projectsArray : [],

@@ -2,9 +2,8 @@ import { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, Label, FormGroup } from 'reactstrap';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { validateCommentForm } from '../../utils/validateCommentForm';
-import { useDispatch } from 'react-redux';
 import { postComment } from './commentsSlice';
-import "../../styles/components/commentForm/commentForm.scss";
+import { useDispatch } from 'react-redux';
 
 const CommentForm = ({projectId}) => {
     const [modalOpen, setModalOpen] = useState(false);
@@ -15,10 +14,9 @@ const CommentForm = ({projectId}) => {
             projectId: parseInt(projectId),
             rating: values.rating,
             author: values.author,
-            text: values.commentText,
-            date: new Date(Date.now()).toISOString()
+            text: values.commentText
         };
-        console.log(comment);
+
         dispatch(postComment(comment));
         setModalOpen(false);
     }
@@ -28,13 +26,12 @@ const CommentForm = ({projectId}) => {
             <Button
                 outline
                 onClick={() => setModalOpen(true)}
-                className="comment-btn"
+                className="mt-5"
             >
                 <i className='fa fa-pencil fa-lg' /> Add Comment
             </Button>
             <Modal
                 isOpen={modalOpen}
-                className="modal"
             >
                 <ModalHeader
                     toggle={() => setModalOpen(false)}
@@ -48,7 +45,6 @@ const CommentForm = ({projectId}) => {
                     commentText: '',
                     }}
                     onSubmit={handleSubmit}
-                    validate={validateCommentForm}
                 >
                     <Form>
                         <FormGroup>

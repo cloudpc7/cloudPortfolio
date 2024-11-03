@@ -4,7 +4,7 @@ import { ListGroup, Image } from "react-bootstrap";
 import "../../styles/components/skills/skills.scss";
 
 const SkillsCard = ({ skill }) => {
-    const { name,image,description } = skill;
+    const { id, name, url, image, description } = skill;
     const [flipped, setFlipped] = useState(false);
 
     const { transform } = useSpring({

@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { mapImageURL } from '../../utils/mapImageURL';
 import { db } from '../../firebase.config';
-import { collection, getDocs, addDoc} from 'firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore';
 
 export const fetchSkills = createAsyncThunk('skills/fetchSkills', async () => {
     const querySnapshot = await getDocs(collection(db,'skills'));

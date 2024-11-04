@@ -101,6 +101,10 @@ p {
   color: #00BFFF;
   text-transform: uppercase;
 }
+.offcanvas-header .btn-close {
+  background-color: #ffffff;
+  color: #ffffff;
+}
 
 .offcanvas-body {
   background-color: #050505;

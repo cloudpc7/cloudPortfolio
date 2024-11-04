@@ -1,7 +1,6 @@
 {
   "hosting": {
     "public": "build",
-    "site": "https://cloudportfolio-440621.web.app",
     "ignore": [
       "firebase.json",
       "**/.*",

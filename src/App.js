@@ -30,7 +30,7 @@ function App() {
     <Container fluid>
       <Header />
           <Routes>
-            <Route path='/' element={<HomePage />}/>
+            <Route path='/cloudPortfolio' element={<HomePage />}/>
             <Route path='about' element={<AboutPage />}/>
             <Route path='contact' element={<ContactPage />}/>
             <Route path='projects' element={<ProjectsPage />}/>

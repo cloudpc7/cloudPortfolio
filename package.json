@@ -1,6 +1,6 @@
 {
     "name": "thecloudportfolio",
-    "homepage": "https://clouddrop7.github.io/cloudPortfolio",
+    "homepage": "https://clouddrop7.github.io/cloudportfolio/",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -37,15 +37,7 @@
         "web-vitals": "^4.2.4"
     },
     "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "deploy": "gh-pages -d build",
-        "deploy:firebase": "npm run build && firebase deploy",
-        "build:firebase": "npm run build:firebase-env && npm run build",
-        "build:github": "npm run build:github-env && npm run build",
-        "build:firebase-env": "cp .env .env.production",
-        "build:github-env": "cp .env.production .env",
-        "postdeploy": "firebase deploy"
+        "deploy": "gh-pages -d build"
     },
     "eslintConfig": {
         "extends": [

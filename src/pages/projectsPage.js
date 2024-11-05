@@ -2,6 +2,7 @@ import { Container,Row, Col, Button } from 'react-bootstrap';
 import ProjectsList from '../features/projects/ProjectsList';
 import "../styles/components/ProjectPage/projectPage.scss";
 
+//adding a comment to test functionality of application
 const ProjectsPage = () => {
 
     return (

@@ -1,6 +1,5 @@
 {
-    "name": "thecloudportfolio",
-    "homepage": "https://clouddrop7.github.io/cloudportfolio/",
+    "name": "cloudportfolio",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -16,6 +15,7 @@
         "bootstrap": "^5.3.3",
         "bootstrap-icons": "^1.11.3",
         "bootstrap-social": "^5.1.1",
+        "cloudportfolio": "file:",
         "cors": "^2.8.5",
         "dotenv": "^16.4.5",
         "express": "^4.21.1",

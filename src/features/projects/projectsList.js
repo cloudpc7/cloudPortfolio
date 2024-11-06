@@ -1,6 +1,6 @@
-import { selectAllProjects } from './projectsSlice';
+import { selectAllProjects } from './projectsSlice.js';
 import { Col, Row } from 'react-bootstrap';
-import ProjectCard from './ProjectCard';
+import ProjectCard from './projectCard.js';
 import { useSelector } from 'react-redux';
 import Error from '../../components/Error';
 import Loading from '../../components/Loading';

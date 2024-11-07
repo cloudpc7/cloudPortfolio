@@ -20,6 +20,8 @@ jobs:
         run: |
           echo "Generating firebase.config.js from GitHub secrets..."
           mkdir -p src  # Ensure the src directory exists
+          
+          # Generate the firebase.config.js file using the GitHub secrets
           echo "import { initializeApp } from 'firebase/app';" > src/firebase.config.js
           echo "import { getFirestore } from 'firebase/firestore';" >> src/firebase.config.js
           echo "" >> src/firebase.config.js
@@ -36,13 +38,17 @@ jobs:
           echo "const app = initializeApp(firebaseConfig);" >> src/firebase.config.js
           echo "export const db = getFirestore(app);" >> src/firebase.config.js
 
-      # Step 3: Install dependencies
+      # Step 3: Check the generated firebase.config.js (optional but useful for debugging)
+      - name: Check generated config file
+        run: cat src/firebase.config.js
+
+      # Step 4: Install dependencies
       - run: npm ci && npm run build
 
-      # Step 4: Deploy to Firebase Hosting
+      # Step 5: Deploy to Firebase Hosting
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_CLOUDPORTFOLIO_440621 }}
           channelId: live
-          projectId: cloudportfolio-440621
+          

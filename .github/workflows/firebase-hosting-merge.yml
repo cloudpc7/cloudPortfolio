@@ -2,44 +2,16 @@
 # https://github.com/firebase/firebase-tools
 
 name: Deploy to Firebase Hosting on merge
-
 on:
   push:
     branches:
-      - main  # Trigger this workflow on push to 'main' (adjust as needed)
-
+      - main
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Checkout code
       - uses: actions/checkout@v4
-
-      # Step 2: Generate firebase.config.js from GitHub secrets
-      - name: Generate firebase.config.js from secrets
-        run: |
-          echo "Generating firebase.config.js from GitHub secrets..."
-          mkdir -p src  # Ensure the src directory exists
-          echo "import { initializeApp } from 'firebase/app';" > src/firebase.config.js
-          echo "import { getFirestore } from 'firebase/firestore';" >> src/firebase.config.js
-          echo "" >> src/firebase.config.js
-          echo "const firebaseConfig = {" >> src/firebase.config.js
-          echo "  apiKey: '${{ secrets.FIREBASE_API_KEY }}'," >> src/firebase.config.js
-          echo "  authDomain: '${{ secrets.FIREBASE_AUTH_DOMAIN }}'," >> src/firebase.config.js
-          echo "  projectId: '${{ secrets.FIREBASE_PROJECT_ID }}'," >> src/firebase.config.js
-          echo "  storageBucket: '${{ secrets.FIREBASE_STORAGE_BUCKET }}'," >> src/firebase.config.js
-          echo "  messagingSenderId: '${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}'," >> src/firebase.config.js
-          echo "  appId: '${{ secrets.FIREBASE_APP_ID }}'," >> src/firebase.config.js
-          echo "  measurementId: '${{ secrets.FIREBASE_MEASUREMENT_ID }}'" >> src/firebase.config.js
-          echo "};" >> src/firebase.config.js
-          echo "" >> src/firebase.config.js
-          echo "const app = initializeApp(firebaseConfig);" >> src/firebase.config.js
-          echo "export const db = getFirestore(app);" >> src/firebase.config.js
-
-      # Step 3: Install dependencies
       - run: npm ci && npm run build
-
-      # Step 4: Deploy to Firebase Hosting
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}

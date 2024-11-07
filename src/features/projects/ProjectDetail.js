@@ -1,7 +1,7 @@
 import { Col, Image } from 'react-bootstrap';
 
 const ProjectDetail = ({ project}) => {
-    const { id, name, image } = project;
+    const { name, image } = project;
     console.log(project.url);
     return (
         

@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Container, Row, Col, Image, Button } from 'react-bootstrap';
+import { Container, Row, Col, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import "../styles/components/AboutPage/AboutPage.scss";
 import sunset from "../app/assets/images/sunset.jpg";

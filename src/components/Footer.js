@@ -1,4 +1,4 @@
-import {Container, Row, Nav, Image} from 'react-bootstrap';
+import {Container, Nav, Image} from 'react-bootstrap';
 import "../styles/components/Footer/Footer.scss";
 import linkedIn from "../app/assets/images/linkedin-logo.svg";
 const Footer = () => {

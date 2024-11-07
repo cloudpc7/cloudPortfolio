@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, Label, FormGroup } from 'reactstrap';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
-import { validateCommentForm } from '../../utils/validateCommentForm';
 import { postComment } from './commentsSlice';
 import { useDispatch } from 'react-redux';
 

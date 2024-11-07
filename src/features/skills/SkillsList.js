@@ -13,8 +13,6 @@ const SkillsList = () => {
     const isLoading = useSelector((state) => state.skills.isLoading);
     const errMsg = useSelector((state) => state.skills.errMsg);
 
-    console.log(skills);
-
     if(isLoading) {
         return (
             <Loading />

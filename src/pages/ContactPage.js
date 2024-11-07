@@ -1,5 +1,5 @@
-import {  Container, Row, Col, Image, Button, Nav } from 'react-bootstrap';
-import { FontAwesomeIcon, fontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {  Container, Row, Col, Nav } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import ContactForm from '../components/ContactForm';

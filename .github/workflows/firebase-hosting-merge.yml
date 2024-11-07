@@ -22,7 +22,6 @@ jobs:
           mkdir -p src  # Ensure the src directory exists
           echo "import { initializeApp } from 'firebase/app';" > src/firebase.config.js
           echo "import { getFirestore } from 'firebase/firestore';" >> src/firebase.config.js
-          echo "import { getAnalytics } from 'firebase/analytics';" >> src/firebase.config.js
           echo "" >> src/firebase.config.js
           echo "const firebaseConfig = {" >> src/firebase.config.js
           echo "  apiKey: '${{ secrets.FIREBASE_API_KEY }}'," >> src/firebase.config.js
@@ -35,7 +34,6 @@ jobs:
           echo "};" >> src/firebase.config.js
           echo "" >> src/firebase.config.js
           echo "const app = initializeApp(firebaseConfig);" >> src/firebase.config.js
-          echo "const analytics = getAnalytics(app);" >> src/firebase.config.js
           echo "export const db = getFirestore(app);" >> src/firebase.config.js
 
       # Step 3: Install dependencies

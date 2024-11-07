@@ -7,6 +7,7 @@ import 'bootstrap-social/bootstrap-social.css';
 import 'font-awesome/css/font-awesome.css';
 import App from './App';
 import { HashRouter as Router } from 'react-router-dom';
+
 const container = document.getElementById('root');
 const root = createRoot(container);
 

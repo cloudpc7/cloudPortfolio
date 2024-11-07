@@ -4,6 +4,7 @@ import "../styles/components/AboutPage/AboutPage.scss";
 import sunset from "../app/assets/images/sunset.jpg";
 const AboutPage = () => {
     //performing test for firebase deployment
+    //adding a comment for testing
     return (
         <Container>
             <Row className="row row-cols-1 mt-5">

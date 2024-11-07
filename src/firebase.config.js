@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { getAnalytics } from "firebase/analytics";
+
 
 // Use environment variables from .env file
 
@@ -18,5 +18,4 @@ export default firebaseConfig;
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);  // Optional, if you're using Analytics
 export const db = getFirestore(app); // Export Firestore instance

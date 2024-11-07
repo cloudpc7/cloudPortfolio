@@ -37,7 +37,7 @@ jobs:
           echo "export const db = getFirestore(app);" >> src/firebase.config.js
 
       # Step 3: Install dependencies
-      - run: npm run build
+      - run: npm ci && npm run build
 
       # Step 4: Deploy to Firebase Hosting
       - uses: FirebaseExtended/action-hosting-deploy@v0

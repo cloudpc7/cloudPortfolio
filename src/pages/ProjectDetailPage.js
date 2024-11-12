@@ -6,7 +6,7 @@ import CommentsList from '../features/comments/CommentsList';
 import { useSelector } from 'react-redux';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
-
+import "../styles/components/projectDetail/projectDetail.scss";
 const ProjectDetailPage = () => {
     const { projectId } = useParams();
     const project = useSelector(selectProjectById(projectId));
@@ -21,24 +21,11 @@ const ProjectDetailPage = () => {
         content = <Error />
     } else {
         content = (
-            <Container fluid className="my-5">
-                <Row className="
-                    row
-                    row-cols-1
-                    row-cols-sm-1
-                    justify-content-center 
-                    p-0
-                    "
-                >
+            <Container>
+                <Row className="project-detail-container">
                     <ProjectDetail project={project}/>
-                    <Col className="p-0"
-                        >
-                        <h4 className="
-                            h4 
-                            comment-title 
-                            text-center  
-                            "
-                        >
+                    <Col className="comment-container-col">
+                        <h4 className="comment-title">
                             Comments
                         </h4>
                         <CommentsList projectId={projectId}/>

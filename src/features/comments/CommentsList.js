@@ -9,16 +9,17 @@ const CommentsList = ({ projectId }) => {
     const comments = useSelector(selectCommentsByProjectId(projectId));
 
     return (
-        <Container fluid>
-            <Row className="row row-cols-md-12 row-cols-lg-3 mx-5">
+        <Container className="comment-container">
+            <Row className="comment">
                 {comments.map((comment) => (
-                    <Col md={6} key={comment.id}>  {/* Moved key here */}
+                    <Col lg={4} className="comments-card">
                         <Comment comment={comment} />
                     </Col>
+                        
                 ))}
             </Row>
-            <Row className="row row-cols-1 justify-content-center align-items-center">
-                <Col className="d-flex flex-column col-8 align-items-center">
+            <Row className="">
+                <Col className="">
                     <CommentForm projectId={projectId} />
                 </Col>
             </Row>

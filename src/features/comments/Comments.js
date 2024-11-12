@@ -1,14 +1,13 @@
 import { formatDate } from '../../utils/formatDate';
-import { Card } from 'react-bootstrap';
+import '../../styles/components/comments/comments.scss'
 const Comment = ({ comment }) => {
     const { text: commentText, rating, author, date } = comment;
 
     return (
-        <Card className="px-md-0 px-4">
-            <p className="text-center text-md-start lh-sm">{commentText}</p>
-            <br />
-            <p className="text-center text-md-start">{rating}/5 stars -- {author}, {formatDate(date)}</p>
-        </Card>
+        <>
+            <p className="comment-text">{commentText}</p>
+            <p className="comment-rating">{rating}/5 stars -- {author}, {formatDate(date)}</p>
+        </>
     )
 };
 

@@ -7,13 +7,13 @@ import "../styles/components/ContactPage/ContactPage.scss";
 
 const ContactPage = () => {
     return (
-        <Container className="contact-form mt-5">
-            <Row className="row row-cols-1 p-3">
-                <Col className="m-0">
-                    <h2 className="h2 fs-1 text-center mb-1">Contact Information</h2>
+        <Container className="contact-form">
+            <Row className="contact-container">
+                <Col className="contact-col">
+                    <h1 className="contact-title">Contact Information</h1>
                 </Col>
-                <Col className="m-0 d-flex justify-content-around">
-                    <Nav>
+                <Col className="contact-links-col">
+                    <Nav className="contact-links">
                         <Nav.Link href="https://discord.com" className="link">
                             <FontAwesomeIcon icon={faDiscord} size="2x"/>
                         </Nav.Link>
@@ -33,13 +33,11 @@ const ContactPage = () => {
                     </Nav>
                 </Col>
             </Row>
-            <Row className="row row-cols-1 mb-5">
-                <Col className="my-2">
-                    <h2 className="feed-back-title fs-2 text-center mb-3">Please Provide Feedback</h2>
-                </Col>
-                <Col className="my-2">
-                    <ContactForm /> 
-                </Col>
+            <Row className="feedback-container">
+                <h2 className="feed-back-title">Please Provide Feedback</h2>
+                    <Col className="contact-form-container">
+                        <ContactForm /> 
+                    </Col>
             </Row>
             
         </Container>

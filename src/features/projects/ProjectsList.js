@@ -1,47 +1,67 @@
-import { selectAllProjects } from './projectsSlice.js';
-import { Col, Row } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import { useSpringCarousel } from 'react-spring-carousel';
 import ProjectCard from './projectCard.js';
 import { useSelector } from 'react-redux';
+import { selectAllProjects } from './projectsSlice.js';
 import Error from '../../components/Error';
 import Loading from '../../components/Loading';
+import "../../styles/components/ProjectPage/projectPage.scss";
+
 const ProjectsList = () => {
+  const projects = useSelector(selectAllProjects);
+  const isLoading = useSelector((state) => state.projects.isLoading);
+  const errMsg = useSelector((state) => state.projects.errMsg);
 
-    const projects = useSelector(selectAllProjects)
-    const isLoading = useSelector((state) => state.projects.isLoading);
-    const errMsg = useSelector((state) => state.projects.errMsg);
+  const [itemsPerSlide, setItemsPerSlide] = useState(1);
 
-    if (isLoading) {
-        return (
-            <Row>
-                <Loading />
-            </Row>
-        );
-    }
+  useEffect(() => {
+    const updateItemsPerSlide = () => {
+        const width = window.innerWidth;
+        if(width < 768) {
+            setItemsPerSlide(1);
+        } else if (width < 992) {
+            setItemsPerSlide(2);
+        } else {
+            setItemsPerSlide(3);
+        }
+    };
+    updateItemsPerSlide();
+    window.addEventListener('resize', updateItemsPerSlide);
+    return () => window.removeEventListener('resize', updateItemsPerSlide);
+  }, []);
 
-    if (errMsg) {
-        return (
-            <Row>
-                <Error errMsg={errMsg} />
-            </Row>
+  
+
+  const { carouselFragment } = useSpringCarousel({
+    itemsPerSlide: itemsPerSlide,
+    withLoop: true,
+    items: projects.map((project) => ({
+        id: project.id,
+        renderItem: (
+            <div className="use-spring-carousel-wrapper">
+                <ProjectCard project={project}/>
+            </div>
         )
-    }
-
+    }))
+  })
+  
+  if (isLoading) {
     return (
-        <Row className="
-            row-cols-1 
-            row-cols-sm-1 
-            row-cols-md-2 
-            row-cols-lg-8 
-            justify-content-around
-            "
-        >
-            {projects.map((project) => (
-                <Col lg={6} key={project.id} >
-                    <ProjectCard project={project}/>
-                </Col>
-            ))}
-        </Row>
-    )
-}
+      <Loading />
+    );
+  }
+
+  if (errMsg) {
+    return (
+      <Error errMsg={errMsg} />
+    );
+  }
+
+  return (
+    <div className="carousel">
+        { carouselFragment }
+    </div>
+  );
+};
 
 export default ProjectsList;

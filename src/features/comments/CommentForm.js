@@ -3,7 +3,7 @@ import { Button, Modal, ModalHeader, ModalBody, Label, FormGroup } from 'reactst
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { postComment } from './commentsSlice';
 import { useDispatch } from 'react-redux';
-//adding test 
+
 const CommentForm = ({projectId}) => {
     const [modalOpen, setModalOpen] = useState(false);
     const dispatch = useDispatch();

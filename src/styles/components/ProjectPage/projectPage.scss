@@ -1,8 +1,32 @@
-@import "../../main/main.scss";
-@import "../../variables/colors/colors.scss";
-@import "../../variables/font/fontthemes.scss";
-
-.project-page-title {
-    font-size: 2.5rem;
-    color: #fff;
-}
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  
+    .carousel {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      width: 100%;
+      overflow: hidden;
+  
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+  
+      .use-spring-carousel-main-wrapper {
+        cursor: grab;
+        align-items: center;
+        justify-content: center;
+        margin: 3rem auto;
+        width: 100%;
+  
+        .use-spring-carousel-item {
+          
+          width: 100%;
+          height: auto; 
+        }
+      }
+    }
+  }

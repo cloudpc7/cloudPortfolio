@@ -1,0 +1,24 @@
+.project-detail-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  align-items: center;
+}
+.project-detail-container .project-image-col {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.project-detail-container .project-image-col .project-image {
+  width: 70%;
+  max-height: 80%;
+  margin-bottom: 3rem;
+}
+.project-detail-container .comment-container-col {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0;
+}/*# sourceMappingURL=projectDetail.css.map */

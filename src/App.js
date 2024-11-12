@@ -14,7 +14,7 @@ import { fetchProjects } from './features/projects/projectsSlice';
 import { fetchSkills } from './features/skills/skillsSlice';
 import { fetchComments } from './features/comments/commentsSlice';
 
-import './styles/components/App/App.scss';
+import './styles/main/main.scss';
 
 function App() {
 

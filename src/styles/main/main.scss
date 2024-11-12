@@ -1,52 +1,274 @@
-@import '../reset/reset.scss';
-@import '../variables/colors/colors';
-@import '../variables/font/fontthemes.scss';
+@use 'sass:math';
+@use 'sass:color';
+@use '../variables/utilities/utilities.scss' as vars;
+@use '../reset/reset.scss';
+@use '../variables/colors/colors' as colors;
+@use '../variables/font/fontthemes.scss' as font;
 
 body {
-    background-color: $black-primary;
-    font-family: $fontFamily;
-    color: $black-primary;
+  background-color: colors.colorTheme(deep-blue);
+  @include font.font-theme(default);
+  font-size: font.responsive-font-size(xs);
+
+  @media (min-width: 576px) {
+    font-size: font.responsive-font-size(sm);
+  }
+
+ 
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column; 
 }
-
-.h1, .h2, p {
-    margin: 0;
-    padding: 0;
-}
-
-.h1 {
-    font-family: $FontTitle;
-    font-weight: 700;
-    color: #ffffff;
-}
-
-.h2 {
-    font-size: 1.125rem;
-    color:#D3D3D3;
-}
-
-@media (min-width: 992px) {
-    .h2 {
-        font-size: 1.5rem;
-    }
-
-}
-
-
-
-@media (min-width: 1200px) {
-    .h2 {
-        font-size: 1.5rem;
-    }
-}
-
-p {
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: $white-primary;
-}
-
 
 .container-fluid {
-    margin: 0 auto;
-    max-width: 90rem;
+  // Allow the container to grow and fill the available space
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column; 
+}
+
+
+// Font styles 
+
+h1 {
+  @include font.font-theme(title);
+
+  font-size: font.responsive-title-font-size(xs);
+  @media (min-width: 576px) {
+    font-size: font.responsive-title-font-size(sm);
+  };
+  @media (min-width: 768px) {
+    font-size: font.responsive-title-font-size(md);
+  }
+  @media (min-width: 992px) {
+    font-size: font.responsive-title-font-size(lg);
+  }
+  @media (min-width: 1200px) {
+    font-size: font.responsive-title-font-size(xl);
+  }
+  @media (min-width: 1400px) {
+    font-size: font.responsive-title-font-size(xxl);
+  }
+}
+
+h2 {
+  @include font.font-theme(subTitle);
+  font-size: font.responsive-sub-title-font-size(xs);
+  @media (min-width: 576px) {
+    font-size: font.responsive-sub-title-font-size(sm);
+  };
+  @media (min-width: 768px) {
+    font-size: font.responsive-sub-title-font-size(md);
+  }
+  @media (min-width: 992px) {
+    font-size: font.responsive-sub-title-font-size(lg);
+  }
+  @media (min-width: 576px) {
+    font-size: font.responsive-sub-title-font-size(xl);
+  }
+  @media (min-width: 576px) {
+    font-size: font.responsive-sub-title-font-size(xxl);
+  }
+}
+
+// Container styles
+
+.container-fluid {
+  padding-left: vars.gutter(sm);
+  padding-right: vars.gutter(sm);
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    .container-fluid {
+      padding-left: vars.gutter(md);
+      padding-right: vars.gutter(md);
+    }
+  }
+
+  @media (min-width: 992px) {
+    .container-fluid {
+      padding-left: vars.gutter(lg);
+      padding-right: vars.gutter(lg);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .container-fluid {
+      padding-left: vars.gutter(xl);
+      padding-right: vars.gutter(xl);
+    }
+  }
+
+  @media (min-width: 1400px) {
+    .container-fluid {
+      padding-left: vars.gutter(xxl);
+      padding-right: vars.gutter(xxl);
+    }
+  }
+}
+
+.container {
+  padding: 0;
+}
+
+// Color Styles
+
+.offcanvas-header,
+.offcanvas-body {
+  background-color: colors.colorTheme(deep-blue); // #38A3A5 (Deep teal)
+}
+
+.card {
+  background-color: colors.colorTheme(dark-grey); // #050505
+}
+
+.hero-title,
+.offcanvas-header,
+.navbar-brand,
+.about-title,
+.project-page-title,
+.comment-title {
+  color: colors.colorTheme(Secondary);
+
+}
+
+.navbar-brand {
+  display: none;
+}
+
+
+@media (min-width: 992px) {
+  .offcanvas-body {
+      .navbar-brand {
+          display: block;
+          font-size: 2em;
+          cursor: pointer;
+          margin-right: 0;
+      }
+  }
+}
+
+.navbar-toggler {
+  border: 4px solid colors.colorTheme(Primary);
+}
+
+.nav-link {
+  color: colors.colorTheme(Primary);
+  text-transform: uppercase;
+  &:hover {
+    background-color: color.adjust(colors.colorTheme(Primary), $lightness: -5%);
+    color: colors.colorTheme(dark-grey); 
+  }
+}
+
+i:hover {
+  color: colors.colorTheme(dark-grey); // #C19A6B (Camel)
+}
+
+i:active {
+  color: colors.colorTheme(grey-sub);
+}
+
+.btn-close {
+  background-color: colors.colorTheme(light-gray);
+  cursor:pointer;
+}
+
+p,
+.call-to-action,
+.card-title,
+.label,
+.form-label,
+.feedback-label,
+.form-control::placeholder,
+.form-control,
+.form-check-label {
+  color: color.adjust(colors.colorTheme(Secondary), $lightness: -10%); // Slightly darker Champagne
+}
+
+.hero-caption {
+  @include font.font-theme(caption);
+  font-style: italic;
+}
+
+// Button styles
+
+.call-to-action,
+.contact,
+.feed-back-btn,
+.comment-bnt {
+  background: linear-gradient(to right, colors.colorTheme(teal-accent), colors.colorTheme(deep-blue));
+  color: color.adjust(colors.colorTheme(Secondary), $lightness: -10%);
+  padding: 1rem 2rem; 
+  border: none; 
+  border-radius: 5px; 
+  font-weight: bold; 
+  text-transform: uppercase;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; 
+  text-decoration:none;
+  cursor:pointer;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); 
+    color: colors.colorTheme(gold-hint);
+  }
+}
+
+// Image Styles
+.sunset {
+    max-height: 200px;
+    width: 100%;
+    align-self: center;
+}
+
+.linked-icon {
+  width: 60px;
+  height: 60px;
+}
+
+// Navbar style
+.offcanvas-header {
+  text-transform: uppercase;
+}
+.navbar  {
+  margin-top: 1.25rem;
+  position: relative;
+  text-transform: uppercase;
+  padding: 0;
+  @media (min-width: 992px) {
+      margin-top: 1em;
+      padding: 0;
+  }
+
+  @media (min-width: 1200px) {
+    margin-top: 1em;
+  }
+
+  .container {
+      .navbar-toggler {
+          .navbar-toggler-icon {
+              background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,215,0,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+          }
+      }
+
+      .navbar-nav {
+          align-items: start;
+          margin-top: 1rem;
+          gap: 1rem;
+
+          .nav-link {
+              text-transform: uppercase;
+          }
+      }
+
+      @media (min-width: 992px) {
+          .navbar-nav {
+          width: 100%;
+          padding-left: 0rem;
+          margin-top: 0;
+      }
+    }
+  }
+
 }

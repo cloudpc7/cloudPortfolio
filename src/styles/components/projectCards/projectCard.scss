@@ -1,28 +1,34 @@
-@import "../../main/main.scss";
-@import "../../variables/font/fontthemes.scss";
-@import "../../variables/colors/colors.scss";
 
-.project-card {
-    background-color: #050505
-}
+@use 'sass:math';
+@use 'sass:color';
+@use '../../variables//colors/colors.scss' as colors;
 
-.project-image {
-    width: 200px;
-    height: 200px;
-}
+.card-link {
+    text-decoration: none;
 
-@media (min-width: 576px) {
-    .project-image {
-        width: 300px;
-        height: 200px;
+    .card {
+        align-items: center;
+        max-width: 425px;
+        max-height: 425px;
+        background-color: colors.colorTheme(white-primary);
+        padding:1em;
+
+        .project-card-img{
+            width: 80%;
+            margin-bottom: 1rem;
+         }
+
+         .card-title {
+            text-align: center;
+            color: colors.colorTheme(teal-accent);
+        }
+
+        .card-body {
+            padding: 0;
+            text-align: center;
+            color: colors.colorTheme(deep-blue);
+            max-width: 95%;
+        }
+    
     }
 }
-
-.project-title {
-    color: #D3D3D3;
-}
-
-a {
-    text-decoration: none;
-}
-

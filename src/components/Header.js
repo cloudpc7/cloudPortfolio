@@ -10,7 +10,7 @@ const Header = () => {
 
     return (
         <Navbar expand="lg">
-            <Container className="p-0">
+            <Container>
                 <Navbar.Toggle
                     onClick={handleshow}
                     aria-controls="offcanvasNavbar-expand-md"
@@ -23,7 +23,7 @@ const Header = () => {
                     onHide={handleClose}
                 >
                     <Offcanvas.Header closeButton>
-                        cloud
+                        <p>cloud</p>
                     </Offcanvas.Header>
                     <Offcanvas.Body className="align-items-center">
                         <Nav className="ml-auto">

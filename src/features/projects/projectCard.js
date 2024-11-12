@@ -1,18 +1,19 @@
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import "../../styles/components/comments/comments.scss";
+import "../../styles/components/projectCards/projectCard.scss";
 const ProjectCard = ({ project }) => {
     const {id, name, image, description} = project;
 
     return (
-        <Link to={`${id}`} className="link link-underline link-underline-opacity-0" >
-            <Card className="mb-5 border-0 ">
-                <Card.Img variant="top" src={image} alt={name} className="p-2"/>
-                <Card.Title className="text-center py-2">
+        <Link to={`${id}`} className="card-link" >
+            <Card className="project-card">
+                <Card.Img variant="top" src={image} alt={name} className="project-card-img"/>
+                <Card.Title className="card-title">
                     {name}
                 </Card.Title>
                 <Card.Body>
-                    <Card.Text className="text-center lh-sm">
+                    <Card.Text className="card-body">
                         {description}
                     </Card.Text>
                 </Card.Body>

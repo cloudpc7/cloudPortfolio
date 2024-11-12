@@ -1,18 +1,30 @@
-$black-primary: #050505;
-$white-primary: #fff;
-$grey-primary: #4B4B4B;
-$grey-secondary: #A9A9A9;
-$steelblue: #4682B4;
-$grey-sub: #D3D3D3;
-$form-label: #D3D3D3;
-$blue: #00BFFF;
+@use 'sass:math';
 
 $color-theme: (
-  background: #050505,
+  black-primary: #050505,
   white-primary: #ffffff,
+  blue-primary: #00BFFF,
+  secondary-blue: #4682B4,
+  blue-sub: #0099CC,
+  dark-blue: #0d6efd,
   grey-primary: #333333,
-  btn-color: #00BFFF,
   grey-sub: #D3D3D3,
-  form-label: #D3D3D3,
-  blue: #00BFFF,
+  deep-blue: #212F3D,
+  light-gray: #99A3A4,
+  teal-accent: #00CED1,
+  gold-hint: #FFD700,
+  dark-grey: #050505,
+  Primary: #38A3A5,
+  Secondary: #F2E7D5,
+  Accent: #C19A68,
+  title: #00B7EB,
 );
+
+@function colorTheme($key) { // Use consistent function name
+  @return map-get($color-theme, $key);
+}
+
+
+
+
+

@@ -15,8 +15,8 @@ const HomePage = () => {
         </Col>
         <Col className="hero-caption-col">
           <p className="hero-caption">
-            I am a website developer that specializes in developing sophisticated web applications
-            by providing a tailored experience.
+            "I am a website developer that specializes in developing sophisticated web applications
+            by providing a tailored experience."
           </p>
         </Col>
         <Col className="hero-button-col">

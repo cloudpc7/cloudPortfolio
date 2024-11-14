@@ -153,11 +153,11 @@ h2 {
 }
 
 .nav-link {
-  color: colors.colorTheme(Primary);
+  color: colors.colorTheme(gold-hint);
   text-transform: uppercase;
   &:hover {
     background-color: color.adjust(colors.colorTheme(Primary), $lightness: -5%);
-    color: colors.colorTheme(dark-grey); 
+    color: colors.colorTheme(white-primary); 
   }
 }
 
@@ -198,7 +198,7 @@ p,
 .feed-back-btn,
 .comment-bnt {
   background: linear-gradient(to right, colors.colorTheme(teal-accent), colors.colorTheme(deep-blue));
-  color: color.adjust(colors.colorTheme(Secondary), $lightness: -10%);
+  color: color.adjust(colors.colorTheme(gold-hint), $lightness: -10%);
   padding: 1rem 2rem; 
   border: none; 
   border-radius: 5px; 
@@ -211,7 +211,7 @@ p,
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); 
-    color: colors.colorTheme(gold-hint);
+    color: colors.colorTheme(white-primary);
   }
 }
 
@@ -248,7 +248,7 @@ p,
   .container {
       .navbar-toggler {
           .navbar-toggler-icon {
-              background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,215,0,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+              background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(174,131,25,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
           }
       }
 

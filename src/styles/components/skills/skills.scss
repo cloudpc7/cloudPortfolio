@@ -5,22 +5,21 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
   margin-top: 3rem;
   padding: 1rem;
 
   @media (min-width: 992px) {
     flex-wrap: wrap;
     justify-content: flex-start;
+    padding: 0;
   }
 
   @media (min-width: 1200px) {
     margin-top: 0;
-    padding: 0;
   }
 
   .skill-card {
-    background-color: colors.colorTheme(dark-grey);
+    background-color: colors.colorTheme(deep-blue);
     cursor: pointer;
   }
 
@@ -85,12 +84,13 @@
 
 .card-front {
   color: color.adjust(colors.colorTheme(gold-hint), $lightness: -10%);
-  background: linear-gradient(to bottom right, colors.colorTheme(deep-blue), colors.colorTheme(teal-accent)); 
+  background: linear-gradient(to bottom right, colors.colorTheme(deep-blue), 
+  colors.colorTheme(teal-accent)); 
 }
 
 .card-back {
   color: colors.colorTheme(light-gray);
-  background-color: colors.colorTheme(deep-blue); 
+  background-color: colors.colorTheme(white-primary); 
   transform: rotateX(180deg);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -99,7 +99,15 @@
 
 @media (min-width: 768px){
   .card-back {
-    font-size: 0.875em;
+    font-size: 0.675rem;
+    word-wrap: break-word;
+
+  }
+}
+
+@media (min-width: 992px) {
+  .card-back {
+    font-size: 0.875rem;
   }
 }
 

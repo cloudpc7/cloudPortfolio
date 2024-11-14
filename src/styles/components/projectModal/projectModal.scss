@@ -2,6 +2,7 @@
 @use 'sass:math';
 @use '../../variables/colors/colors.scss' as colors;
 
+
 .modal-header {
     background-color: colors.colorTheme(deep-blue);
     color: colors.colorTheme(teal-accent);
@@ -9,6 +10,22 @@
         background-color: colors.colorTheme(gold-hint);
     }
 }
+
+@media (min-width: 372px) {
+    .modal-btn {
+        display: flex;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .modal-btn {
+        display:flex;
+        margin: 0;
+    }
+}
+
+
 
 .modal-body {
     background-color: colors.colorTheme(deep-blue);

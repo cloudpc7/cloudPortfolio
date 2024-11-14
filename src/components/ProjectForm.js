@@ -31,7 +31,7 @@ const ProjectForm = () => {
 
     return (
         <Container className='project-modal-container'>
-            <Button className="call-to-action" onClick={() => setModalOpen(true)}>
+            <Button className="call-to-action modal-btn" onClick={() => setModalOpen(true)}>
                 Lets Create
             </Button>
             <Modal

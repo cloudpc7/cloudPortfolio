@@ -5,6 +5,8 @@
 @use '../variables/colors/colors' as colors;
 @use '../variables/font/fontthemes.scss' as font;
 
+// testing application
+
 body {
   background-color: colors.colorTheme(deep-blue);
   @include font.font-theme(default);

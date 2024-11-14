@@ -2,7 +2,7 @@ import { Container, Row, Col, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import "../styles/components/AboutPage/AboutPage.scss";
 import sunset from "../app/assets/images/sunset.jpg";
-import { useState } from 'react';
+
 const AboutPage = () => {
   return (
     <Container  className="about-container">

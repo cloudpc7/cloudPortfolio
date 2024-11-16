@@ -7,14 +7,14 @@ import "../styles/components/ProjectPage/projectPage.scss";
 const ProjectsPage = () => {
 
     return (
-        <Container>
+        <Container className="project-page">
             <Row className="project-page-container">
                 <Col className="project-page-col">
                     <h1 className="project-page-title ">
                         Projects
                     </h1>
                 </Col>
-                <Col className="call">
+                <Col className="call-col">
                     <ProjectForm />
                 </Col>
                 <Col className="carousel-container">

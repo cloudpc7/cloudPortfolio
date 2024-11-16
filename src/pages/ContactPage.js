@@ -7,12 +7,10 @@ import "../styles/components/ContactPage/ContactPage.scss";
 
 const ContactPage = () => {
     return (
-        <Container className="contact-form">
-            <Row className="contact-container">
-                <Col className="contact-col">
+        <Container className="contact-container">
+            <Row className='contact-row'>
+                <Col>
                     <h1 className="contact-title">Contact Information</h1>
-                </Col>
-                <Col className="contact-links-col">
                     <Nav className="contact-links">
                         <Nav.Link href="https://discord.com" className="link">
                             <FontAwesomeIcon icon={faDiscord} size="2x"/>
@@ -33,13 +31,10 @@ const ContactPage = () => {
                     </Nav>
                 </Col>
             </Row>
-            <Row className="feedback-container">
-                <h2 className="feed-back-title">Please Provide Feedback</h2>
-                    <Col className="contact-form-container">
-                        <ContactForm /> 
-                    </Col>
-            </Row>
-            
+                <Row className="form-row">
+                    <h2 className="feed-back-title">Please Provide Feedback</h2>
+                    <ContactForm /> 
+                </Row>
         </Container>
     )
 }

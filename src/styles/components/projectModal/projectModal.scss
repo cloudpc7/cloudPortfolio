@@ -2,19 +2,20 @@
 @use 'sass:math';
 @use '../../variables/colors/colors.scss' as colors;
 
+.project-modal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    @media (min-width: 992px) {
+        justify-content: flex-start;
+    }
+}
 .modal-header {
     background-color: colors.colorTheme(deep-blue);
     color: colors.colorTheme(teal-accent);
     .btn-close {
         background-color: colors.colorTheme(gold-hint);
-    }
-}
-
-@media (min-width: 372px) {
-    .modal-btn {
-        display: flex;
-        margin: 0 auto;
     }
 }
 

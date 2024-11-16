@@ -1,5 +1,6 @@
 {
     "name": "cloudportfolio",
+    "homepage": "https://clouddrop7.github.io/cloudportfolio/",
     "version": "0.1.0",
     "private": true,
     "dependencies": {

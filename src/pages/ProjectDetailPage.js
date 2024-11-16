@@ -25,9 +25,9 @@ const ProjectDetailPage = () => {
                 <Row className="project-detail-container">
                     <ProjectDetail project={project}/>
                     <Col className="comment-container-col">
-                        <h4 className="comment-title">
+                        <h2 className="comment-title">
                             Comments
-                        </h4>
+                        </h2>
                         <CommentsList projectId={projectId}/>
                     </Col>
                 </Row> 

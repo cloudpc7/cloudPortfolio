@@ -1,16 +1,57 @@
+.project-page {
+  align-self: center;
+
+  .project-page-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @media (min-width: 992px) {
+    padding: 0 1rem;
+    }
+    @media (min-width: 768px) {
+      flex-direction: row;
+      gap: 0;
+      align-items: center;
+    }
+    .project-page-col {
+      display: flex;
+      padding: 0;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      text-transform: uppercase;
+      @media (min-width: 768px) {
+        justify-content: flex-start;
+        padding: 0 1rem;
+      }
+
+      @media (min-width: 992px) {
+        padding: 0;
+      }
+    }
+
+    .call-col {
+      padding: 0;
+      align-self: center;
+      align-items: center;
+    }
+  }
+
+
+}
 .carousel-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     padding: 0;
-  
+   
     .carousel {
       display: flex;
       flex-direction: column;
       gap: 3rem;
       width: 100%;
       overflow: hidden;
-  
+      cursor: grab;
       @media (min-width: 768px) {
         flex-direction: row;
       }
@@ -21,11 +62,15 @@
         justify-content: center;
         margin: 3rem auto;
         width: 100%;
-  
+        padding: 0;
         .use-spring-carousel-item {
-          
+          cursor: grab;
+          padding: 0 2rem;
           width: 100%;
           height: auto; 
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
       }
     }

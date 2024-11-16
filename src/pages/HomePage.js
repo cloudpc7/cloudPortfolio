@@ -6,8 +6,8 @@ import "../styles/components/HomePage/HomePage.scss";
 const HomePage = () => {
 
   return (
-    <Container className="p-0">
-      <Row className="hero row row-cols-xl-8">
+    <Container className="hero-container">
+      <Row className="hero">
         <Col className="hero-title-col"> 
           <h1 className="hero-title">
             Crafting Inspiring Websites Together.

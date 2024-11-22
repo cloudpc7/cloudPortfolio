@@ -31,7 +31,7 @@ const AboutPage = () => {
         <Col className="about-content-title-col">
           <h2 className="sub-title">Why I design</h2>
           <p> 
-            I thrive on creating uniquely crafted and tailored web pages. When I design,
+            I thrive on creating uniquely crafted and tailored web pages. When I develop,
             I aim to deliver a "wow" factor that captures everyone’s attention.
           </p>
         </Col>

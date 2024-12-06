@@ -2,11 +2,20 @@ import { Button, Label, Col, FormGroup} from 'reactstrap';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { validateContactForm } from '../utils/validateContactForm';
 import "../styles/components/ContactPage/ContactPage.scss";
+import DOMPurify from 'dompurify';
 //testing
 const ContactForm = () => {
 
     const handleSubmit = (values, { resetForm }) => {
-        resetForm();
+        const sanitizedValues = {
+            firstName: DOMPurify.sanitize(values.firstName),
+            lastName: DOMPurify.sanitize(values.lastName),
+            phoneNum: DOMPurify.sanitize(values.phoneNum), 
+            email: DOMPurify.sanitize(values.email),
+            agree: values.agree,
+            contactType: DOMPurify.sanitize(values.contactType),
+            feedback: DOMPurify.sanitize(values.feedback),
+        };
     }
 
     return (

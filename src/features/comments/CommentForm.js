@@ -3,6 +3,7 @@ import { Button, Modal, ModalHeader, ModalBody, Label, FormGroup } from 'reactst
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { postComment } from './commentsSlice';
 import { useDispatch } from 'react-redux';
+import DOMPurify from 'dompurify';
 
 const CommentForm = ({projectId}) => {
     const [modalOpen, setModalOpen] = useState(false);
@@ -12,8 +13,8 @@ const CommentForm = ({projectId}) => {
         const comment =  {
             projectId: parseInt(projectId),
             rating: values.rating,
-            author: values.author,
-            text: values.commentText
+            author: DOMPurify.sanitize(values.author),
+            text: DOMPurify.sanitize(vlaues.commentText)
         };
 
         dispatch(postComment(comment));

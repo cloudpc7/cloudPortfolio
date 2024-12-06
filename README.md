@@ -3,7 +3,7 @@
 
 [CLOUD PortFolio](https://cloudportfolio-440621.web.app/)
 
-# Hello, I'm [Paul Cloud]
+# Hello, I'm Paul Cloud
 
 A web developer from San Jacinto, CA
 

@@ -14,7 +14,7 @@ const CommentForm = ({projectId}) => {
             projectId: parseInt(projectId),
             rating: values.rating,
             author: DOMPurify.sanitize(values.author),
-            text: DOMPurify.sanitize(vlaues.commentText)
+            text: DOMPurify.sanitize(values.commentText)
         };
 
         dispatch(postComment(comment));

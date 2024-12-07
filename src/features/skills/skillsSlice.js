@@ -9,6 +9,7 @@ export const fetchSkills = createAsyncThunk('skills/fetchSkills', async () => {
     querySnapshot.forEach((doc) => {
         skills.push(doc.data());
     });
+    console.log(skills);
     return skills;
 });
 
